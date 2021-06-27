@@ -16,17 +16,26 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       drawer: Drawer(
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).primaryColor,
-                backgroundImage: AssetImage("assets/images/my_img.jpg"),
+        child: Container(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  backgroundImage: AssetImage("assets/images/my_img.jpg"),
+                ),
+                accountName: Text("Sourav Ganguly"),
+                accountEmail: Text("iamsourav37@gmail.com"),
               ),
-              accountName: Text("Sourav Ganguly"),
-              accountEmail: Text("iamsourav37@gmail.com"),
-            ),
-          ],
+              // Divider(),
+              ListTile(
+                selected: true,
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       ),
       body: Container(),
