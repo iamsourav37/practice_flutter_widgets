@@ -11,22 +11,17 @@ class _ContactusScreenState extends State<ContactusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Contact Us",
-          style: TextStyle(color: Colors.orange),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Center(
-              child: Image.asset(
-                "assets/images/contactus2.png",
-                height: 200,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Image.asset(
+                  "assets/images/contactus2.png",
+                  height: 200,
+                ),
               ),
             ),
             SizedBox(height: 20),

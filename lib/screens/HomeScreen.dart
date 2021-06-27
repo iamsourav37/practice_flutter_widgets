@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter_widgets/screens/AgeCalculator.dart';
 
 import '../constants.dart';
 import 'ContactUs.dart';
@@ -46,6 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: kListTileTitleStyle,
                 ),
                 onTap: () {},
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AgeCalculator()));
+                },
+                leading: Icon(Icons.calculate),
+                title: Text(
+                  "Age Calculator",
+                  style: kListTileTitleStyle,
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.contact_page),
