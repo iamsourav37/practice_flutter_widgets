@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+import 'ContactUs.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -21,19 +24,43 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
-                  backgroundColor: Theme.of(context).primaryColor,
                   backgroundImage: AssetImage("assets/images/my_img.jpg"),
                 ),
-                accountName: Text("Sourav Ganguly"),
-                accountEmail: Text("iamsourav37@gmail.com"),
+                accountName: Text(
+                  "Sourav Ganguly",
+                  style: kNameStyle,
+                ),
+                accountEmail: Text(
+                  "iamsourav37@gmail.com",
+                  style: kEmailStyle,
+                ),
               ),
-              // Divider(),
               ListTile(
                 selected: true,
-                leading: Icon(Icons.home),
-                title: Text("Home"),
+                leading: Icon(
+                  Icons.home,
+                  size: 30.0,
+                ),
+                title: Text(
+                  "Home",
+                  style: kListTileTitleStyle,
+                ),
                 onTap: () {},
               ),
+              ListTile(
+                leading: Icon(Icons.contact_page),
+                title: Text(
+                  "Contact us",
+                  style: kListTileTitleStyle,
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ContactusScreen(),
+                    ),
+                  );
+                },
+              )
             ],
           ),
         ),
