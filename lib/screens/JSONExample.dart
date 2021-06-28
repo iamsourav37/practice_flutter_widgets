@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 
 class JSONExample extends StatefulWidget {
   const JSONExample({Key? key}) : super(key: key);
@@ -16,8 +17,7 @@ class _JSONExampleState extends State<JSONExample> {
         title: Text("JSON example"),
       ),
       body: FutureBuilder(
-        future: DefaultAssetBundle.of(context)
-            .loadString("assets/json/person.json"),
+        future: rootBundle.loadString("assets/json/person.json"),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             var mydata = json.decode(snapshot.data.toString());
