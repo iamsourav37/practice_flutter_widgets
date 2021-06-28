@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_flutter_widgets/screens/AgeCalculator.dart';
 
 import '../constants.dart';
 import 'ContactUs.dart';
 import 'JSONExample.dart';
+import 'FetchDataFromInternet.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -69,6 +71,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => JSONExample()));
+                },
+              ),
+              ListTile(
+                leading: Icon(CupertinoIcons.globe),
+                title: Text(
+                  "Fetch Data from Internet",
+                  style: kListTileTitleStyle,
+                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FetchDataFromInternet()));
                 },
               ),
               ListTile(
