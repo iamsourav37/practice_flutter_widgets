@@ -3,6 +3,7 @@ import 'package:practice_flutter_widgets/screens/AgeCalculator.dart';
 
 import '../constants.dart';
 import 'ContactUs.dart';
+import 'JSONExample.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -58,6 +59,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   "Age Calculator",
                   style: kListTileTitleStyle,
                 ),
+              ),
+              ListTile(
+                leading: Icon(Icons.drive_eta_sharp),
+                title: Text(
+                  "JSON example",
+                  style: kListTileTitleStyle,
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => JSONExample()));
+                },
               ),
               ListTile(
                 leading: Icon(Icons.contact_page),

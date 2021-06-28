@@ -23,9 +23,10 @@ class _AgeCalculatorState extends State<AgeCalculator> {
   _showDatePicker() {
     showDatePicker(
       context: context,
-      initialDate: DateTime(1990),
+      initialDate: DateTime(2000, 2),
       firstDate: DateTime(1920, 1),
       lastDate: DateTime(2100, 1),
+      initialDatePickerMode: DatePickerMode.year,
     ).then((value) {
       setState(() {
         selectedYear = value!.year;
@@ -36,7 +37,6 @@ class _AgeCalculatorState extends State<AgeCalculator> {
 
   void calculateAge() {
     age = DateTime.now().year - selectedYear;
-    // setState(() {});
   }
 
   @override
